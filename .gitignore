@@ -1,0 +1,13 @@
+data/
+.env
+.DS_Store
+__pycache__
+chroma_store
+*__pycache__*
+membox/lex_med/__pycache__/
+poetry.lock
+.idea/
+.terraform
+.terraform.*
+terraform.tfstate
+terraform.tfstate.*

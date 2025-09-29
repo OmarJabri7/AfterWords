@@ -1,0 +1,29 @@
+# Core Web & API Framework
+fastapi==0.116.1
+uvicorn==0.35.0
+mangum==0.19.0
+python-multipart
+
+# Environment & HTTP Handling
+python-dotenv==1.0.1
+requests==2.32.3
+shutilwhich==1.1.0  # optional; not needed if shutil is used normally
+
+# Pydantic for request models
+pydantic==2.10.6
+
+# Language Models and LLM Chains
+openai==1.68.2
+langchain==0.3.21
+langchain-openai==0.3.10
+
+# Text Processing and Translation
+deep-translator==1.11.4
+iso-language-codes==1.1.0
+
+# ElevenLabs TTS
+elevenlabs==1.54.0
+
+boto3==1.37.19
+
+streamlit

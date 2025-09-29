@@ -1,0 +1,22 @@
+FROM public.ecr.aws/lambda/python:3.12
+
+# # Install Rust compiler
+# RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+# ENV PATH="/root/.cargo/bin:${PATH}"
+
+# # Install system dependencies
+# RUN yum -y groupinstall "Development tools" 
+# RUN yum -y install gcc-c++ libcurl-devel cmake3 git
+
+# Upgrade pip and install Python dependencies
+COPY requirements.txt ${LAMBDA_TASK_ROOT}
+RUN pip install --upgrade pip
+RUN pip install python-multipart
+RUN pip install -r requirements.txt
+
+# Copy the membox package to the Lambda task root
+COPY ./membox ${LAMBDA_TASK_ROOT}/membox
+COPY ./db.json ${LAMBDA_TASK_ROOT}/membox
+
+# Set the handler function for Lambda to execute
+CMD ["membox.__main__.handler"]
